@@ -9,9 +9,7 @@
 
 
 struct Image {
-    unsigned int w,h;
 
-    Image(unsigned int w, unsigned int h);
     Image()=default;
 
     vector<unsigned char> decode(string_view filename, unsigned int& width, unsigned int& height);
@@ -20,6 +18,7 @@ struct Image {
     vector<vector<unsigned char>> convertir_a_matriz(vector<unsigned char> new_image, unsigned int w, unsigned h);
     vector<unsigned char> obtenerVector(vector<unsigned char> image, unsigned int w, unsigned h);
     vector<unsigned char> rotarMatriz(vector<unsigned char> &image2, unsigned int w, unsigned int h);
+    void imprimir(vector<unsigned char> image, unsigned int w, unsigned int h);
 
     };
 
