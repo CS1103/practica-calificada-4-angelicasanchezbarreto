@@ -17,8 +17,8 @@ struct Image {
     vector<unsigned char> filter(vector<unsigned char> &image, colores color, unsigned int w, unsigned int h);
     vector<vector<unsigned char>> convertir_a_matriz(vector<unsigned char> new_image, unsigned int w, unsigned h);
     vector<unsigned char> obtenerVector(vector<unsigned char> image, unsigned int w, unsigned h);
-    vector<unsigned char> rotarMatriz(vector<unsigned char> &image2, unsigned int w, unsigned int h);
     void imprimir(vector<unsigned char> image, unsigned int w, unsigned int h);
+    vector<unsigned char> rotateImage(vector<unsigned char> &image2, unsigned int w, unsigned int h);
 
     };
 

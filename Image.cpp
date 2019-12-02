@@ -7,6 +7,8 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <cmath>
+#include <iomanip>
 
 vector<unsigned char> Image::decode(string_view filename, unsigned int& width, unsigned int& height) {
 
@@ -59,6 +61,7 @@ vector<unsigned char> Image::filter(vector<unsigned char> &image, colores color,
 }
 
 
+
 vector<vector<unsigned char>> Image::convertir_a_matriz(vector<unsigned char> new_image, unsigned int w, unsigned h){
     vector<vector<unsigned char>> lab;
     for (auto it = new_image.begin() ; it < new_image.end();){
@@ -94,7 +97,7 @@ vector<unsigned char> Image::obtenerVector(vector<unsigned char> image, unsigned
 }
 
 
-vector<unsigned char> Image::rotarMatriz(vector<unsigned char> &image2, unsigned int w, unsigned int h) {
+vector<unsigned char> Image::rotateImage(vector<unsigned char> &image2, unsigned int w, unsigned int h) {
     vector<unsigned char> image = obtenerVector(image2, w, h);
 
     vector<Matriz> vecMatriz;
@@ -132,11 +135,15 @@ void Image::imprimir(vector<unsigned char> image, unsigned int w, unsigned int h
             int g = image[i * w * 4 + j + 1]; // Green component
             int b = image[i * w * 4 + j + 2]; // Blue component
             int a = image[i * w * 4 + j + 3]; // Alpha component
-            std::cout << r << " ";
-            std::cout << g << " ";
-            std::cout << b << " ";
-            std::cout << a << "|";
+            std::cout << right << setw(4) << r << " ";
+            std::cout << right << setw(4) << g << " ";
+            std::cout << right << setw(4) << b << " ";
+            std::cout << right << setw(4) << a << "|";
         }
         std::cout << endl;
     }
 }
+
+
+
+
